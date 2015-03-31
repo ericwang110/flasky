@@ -1,8 +1,10 @@
 
+from flask.ext.bootstrap import Bootstrap
 from flask.ext.script import Manager
 from flask import Flask, render_template
 app = Flask(__name__)
 manager = Manager(app)
+bootstrap = Bootstrap(app)
 
 
 @app.route('/')
@@ -18,3 +20,4 @@ def user(name):
 if __name__ == '__main__':
     app.run(debug=True)
     manager.run()
+    bootstrap.run()
